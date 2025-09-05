@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ORG_NAME="your-org-name-here"
+ORG_NAME="UNC-DATA-730"
 
 USER_HANDLES=(
   "kdilz"
