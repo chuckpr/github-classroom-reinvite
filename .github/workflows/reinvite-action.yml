@@ -28,4 +28,4 @@ jobs:
       run: echo "${{ secrets.GH_TOKEN }}" | gh auth login --with-token
     
     - name: Run invite processing script
-      run: ./invite_script.sh
+      run: ./reinvite.sh
