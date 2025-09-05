@@ -27,7 +27,8 @@ process_repo_invites() {
 
   echo "  Repository exists. Processing invitations..."
 
-  invites=$(gh api "repos/$full_repo_name/invitations" --jq '.[] | "\(.id),\(.invitee.login)"' 2>/dev/null)
+  invites=$(gh api "repos/$full_repo_name/invitations" --jq '.[] | select(.inviter.login == "github-classroom[bot]") | "\(.id),\(.invitee.login)"' 2>/dev/null)
+  # invites=$(gh api "repos/$full_repo_name/invitations" --jq '.[] | "\(.id),\(.invitee.login)"' 2>/dev/null)
 
   if [ -n "$invites" ]; then
     echo "$invites" | while IFS=',' read invite_id invitee; do
