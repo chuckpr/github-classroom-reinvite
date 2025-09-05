@@ -17,7 +17,15 @@ process_repo_invites() {
   local repo_name="$1"
   local full_repo_name="$ORG_NAME/$repo_name"
 
-  echo "Processing repository: $full_repo_name"
+  echo "Checking repository: $full_repo_name"
+
+  if ! gh api "repos/$full_repo_name" >/dev/null 2>&1; then
+    echo "  Repository $full_repo_name does not exist or is not accessible. Skipping."
+    echo ""
+    return
+  fi
+
+  echo "  Repository exists. Processing invitations..."
 
   invites=$(gh api "repos/$full_repo_name/invitations" --jq '.[] | "\(.id),\(.invitee.login)"' 2>/dev/null)
 
