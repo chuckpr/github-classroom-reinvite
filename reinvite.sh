@@ -4,6 +4,7 @@ ORG_NAME="UNC-DATA-730"
 
 USER_HANDLES=(
   "kdilz"
+  "nborchic"
 )
 
 REPO_PREFIXES=(
@@ -11,6 +12,15 @@ REPO_PREFIXES=(
   "unit-2-assignment-"
   "unit-3-assignment-"
   "unit-4-assignment-"
+  "unit-5-assignment-"
+  "unit-6-assignment-"
+  "unit-7-assignment-"
+  "unit-8-assignment-"
+  "unit-9-assignment-"
+  "unit-10-assignment-"
+  "unit-11-assignment-"
+  "unit-12-assignment-"
+  "unit-13-assignment-"
 )
 
 process_repo_invites() {
